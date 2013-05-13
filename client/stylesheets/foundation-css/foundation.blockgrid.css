@@ -1,0 +1,48 @@
+/* Block Grids ---------------------- */
+/* These are 2-up, 3-up, 4-up and 5-up ULs, suited
+for repeating blocks of content. Add 'mobile' to
+them to switch them just like the layout grid
+(one item per line) on phones
+
+For IE7/8 compatibility block-grid items need to be
+the same height. You can optionally uncomment the
+lines below to support arbitrary height, but know
+that IE7/8 do not support :nth-child.
+-------------------------------------------------- */
+.block-grid { display: block; overflow: hidden; padding: 0; }
+.block-grid > li { display: block; height: auto; float: left; }
+.block-grid.one-up { margin: 0; margin: 0 -8px; }
+.block-grid.one-up > li { width: 100%; padding: 0 0 15px; padding: 0 8px 8px; }
+.block-grid.two-up { margin: 0 -15px; margin: 0 -8px; }
+.block-grid.two-up > li { width: 50%; padding: 0 15px 15px; padding: 0 8px 8px; }
+.block-grid.two-up > li:nth-child(2n+1) { clear: both; }
+.block-grid.three-up { margin: 0 -12px; margin: 0 -8px; }
+.block-grid.three-up > li { width: 33.33333%; padding: 0 12px 12px; padding: 0 8px 8px; }
+.block-grid.three-up > li:nth-child(3n+1) { clear: both; }
+.block-grid.four-up { margin: 0 -10px; }
+.block-grid.four-up > li { width: 25%; padding: 0 10px 10px; }
+.block-grid.four-up > li:nth-child(4n+1) { clear: both; }
+.block-grid.five-up { margin: 0 -8px; }
+.block-grid.five-up > li { width: 20%; padding: 0 8px 8px; }
+.block-grid.five-up > li:nth-child(5n+1) { clear: both; }
+.block-grid.six-up { margin: 0 -8px; }
+.block-grid.six-up > li { width: 16.66667%; padding: 0 8px 8px; }
+.block-grid.six-up > li:nth-child(6n+1) { clear: both; }
+.block-grid.seven-up { margin: 0 -8px; }
+.block-grid.seven-up > li { width: 14.28571%; padding: 0 8px 8px; }
+.block-grid.seven-up > li:nth-child(7n+1) { clear: both; }
+.block-grid.eight-up { margin: 0 -8px; }
+.block-grid.eight-up > li { width: 12.5%; padding: 0 8px 8px; }
+.block-grid.eight-up > li:nth-child(8n+1) { clear: both; }
+.block-grid.nine-up { margin: 0 -8px; }
+.block-grid.nine-up > li { width: 11.11111%; padding: 0 8px 8px; }
+.block-grid.nine-up > li:nth-child(9n+1) { clear: both; }
+.block-grid.ten-up { margin: 0 -8px; }
+.block-grid.ten-up > li { width: 10%; padding: 0 8px 8px; }
+.block-grid.ten-up > li:nth-child(10n+1) { clear: both; }
+.block-grid.eleven-up { margin: 0 -8px; }
+.block-grid.eleven-up > li { width: 9.09091%; padding: 0 8px 8px; }
+.block-grid.eleven-up > li:nth-child(11n+1) { clear: both; }
+.block-grid.twelve-up { margin: 0 -8px; }
+.block-grid.twelve-up > li { width: 8.33333%; padding: 0 8px 8px; }
+.block-grid.twelve-up > li:nth-child(12n+1) { clear: both; }

@@ -1,0 +1,9 @@
+{
+  "packages": {
+    "router": {},
+    "device-detection": {},
+    "bootstrap-3": {},
+    "bootstrap-less": {},
+    "foundation": {}
+  }
+}

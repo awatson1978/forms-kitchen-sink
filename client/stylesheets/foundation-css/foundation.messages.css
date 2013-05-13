@@ -1,0 +1,8 @@
+/* Errors */
+.error input, input.error, .error textarea, textarea.error { border-color: #c60f13; background-color: rgba(198, 15, 19, 0.1); }
+
+.error label, label.error { color: #c60f13; }
+
+.error small, small.error { display: block; padding: 6px 4px; margin-top: -13px; margin-bottom: 12px; background: #c60f13; color: #fff; font-size: 12px; font-weight: bold; -moz-border-radius-bottomleft: 2px; -webkit-border-bottom-left-radius: 2px; border-bottom-left-radius: 2px; -moz-border-radius-bottomright: 2px; -webkit-border-bottom-right-radius: 2px; border-bottom-right-radius: 2px; }
+
+.error textarea:focus, textarea.error:focus { background: #fafafa; border-color: #b3b3b3; }

@@ -1,0 +1,23 @@
+<template name="appContainerTemplate">
+    <div id="appLayoutPanel" class="fullheight padded">
+        <div class="header-row">
+            <div class="panel with-rounded-corners">
+                foo
+            </div>
+        </div>
+        <!--<div class="main-layout-panel">-->
+            <div class="two fullheight columns">
+                <div id="sidebarPanel" class="fullheight panel with-rounded-corners">
+                    {{> formsListTemplate }}
+                </div>
+            </div>
+            <div class="ten fullheight columns">
+                <div id="formPanel" class="fullheight panel with-rounded-corners">
+                    height:  {{height}}
+                </div>
+            </div>
+        <!--</div>-->
+    </div>
+    <div class="hidden resize-trigger">resized: {{resized}}</div>
+</template>
+

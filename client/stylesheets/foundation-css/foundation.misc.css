@@ -1,0 +1,46 @@
+/* Misc ---------------------- */
+.left { float: left; }
+
+.right { float: right; }
+
+.text-left { text-align: left; }
+
+.text-right { text-align: right; }
+
+.text-center { text-align: center; }
+
+.hide { display: none !important; }
+
+.highlight { background: #ffff99; }
+
+/* Maps */
+#googlemap img, object, embed { max-width: none; }
+
+#map_canvas embed { max-width: none; }
+
+#map_canvas img { max-width: none; }
+
+#map_canvas object { max-width: none; }
+
+/* Reset for strange margins by default on <figure> elements */
+figure { margin: 0; }
+
+
+/* Fieldsets */
+fieldset { border: solid 1px #ddd; -webkit-border-radius: 3px; -moz-border-radius: 3px; -ms-border-radius: 3px; -o-border-radius: 3px; border-radius: 3px; padding: 12px 12px 0; margin: 18px 0; }
+fieldset legend { font-weight: bold; background: white; padding: 0 3px; margin: 0; margin-left: -3px; }
+
+
+/* Correct FF custom dropdown height */
+@-moz-document url-prefix() { form.custom div.custom.dropdown a.selector { height: 30px; } }
+.lt-ie9 form.custom div.custom.dropdown a.selector { height: 30px; }
+
+
+/* Nicolas Gallagher's micro clearfix */
+.row { *zoom: 1; }
+.row:before, .row:after { content: " "; display: table; }
+.row:after { clear: both; }
+
+
+
+
