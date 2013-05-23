@@ -1,3 +1,5 @@
+#gitignore file
+
 .idea
 .meteor/release
 .scrap
