@@ -1,0 +1,46 @@
+
+<template name="formTemplate">
+    {{#with user}}
+    <div class="padded container">
+        <form class="form-inline">
+            <input id="firstNameInput" type="text" placeholder="First Name" value="{{FirstName}}" {{first_name_enabled}}></input>
+            <input id="lastNameInput" type="text" placeholder="Last Name" value="{{LastName}}"  {{last_name_enabled}}></input>
+
+            <input id="companyInput" type="text" placeholder="Company" value="{{Company}}"  {{company_enabled}}></input>
+            <input id="addressInput" type="text" placeholder="Address" value="{{Address}}"  {{address_enabled}}></input>
+            <input id="cityInput" type="text" placeholder="City" value="{{City}}"  {{city_enabled}}></input>
+            <input id="countyInput" type="text" placeholder="County" value="{{County}}"  {{county_enabled}}></input>
+            <input id="stateInput" type="text" placeholder="State" value="{{State}}"  {{state_enabled}}></input>
+            <input id="zipInput" type="text" placeholder="Zip" value="{{ZIP}}"  {{zip_enabled}}></input>
+            <input id="phoneInput" type="text" placeholder="Phone" value="{{Phone}}"  {{phone_enabled}}></input>
+            <input id="faxInput" type="text" placeholder="Fax" value="{{Fax}}"  {{fax_enabled}}></input>
+
+            <input id="emailInput" type="text" placeholder="Email" value="{{Email}}"  {{email_enabled}}></input>
+            <input id="webInput" type="text" placeholder="Web" value="{{Web}}"  {{web_enabled}}></input>
+        </form>
+    </div>
+        {{/with}}
+
+        {{#if isNewTask}}
+            <div class="padded container">
+                <button id="newUserButton" type="button" class="fullwidth btn btn-info" width="100%">Create New User!</button>
+            </div>
+        {{/if}}
+
+        {{#if isDeletingTask}}
+            <div class="padded container">
+                <div class="alert alert-danger">
+                    <h4 class="centered">Are you sure you want to delete this user?</h4>
+                    <div class="container">
+                        <div class="col col-lg-6">
+                            <button id="deleteUserButton" type="button" class="fullwidth btn btn-danger">Delete</button>
+                        </div>
+                        <div class="col col-lg-6">
+                            <button id="cancelDeleteButton" type="button" class="fullwidth btn btn-danger">Cancel</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        {{/if}}
+</template>

@@ -1,7 +1,6 @@
-Canvases =  new Meteor.Collection("cfa-forms");
 CustomerAccounts =  new Meteor.Collection("customerAccounts");
 
-Canvases.allow({
+CustomerAccounts.allow({
     insert: function(){
         return true;
     },

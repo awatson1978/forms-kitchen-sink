@@ -1,0 +1,39 @@
+
+// consistent layout
+input{
+  margin-bottom: 20px;
+}
+
+#samplePage {
+  .foo {
+    color: lightgray;
+  }
+}
+
+
+// mobile phone layout
+@media only screen and (max-width: 480px) {
+  #samplePage {
+    .foo {
+      color: blue;
+    }
+  }
+}
+
+// portrait orientation
+@media only screen and (max-width: 768px) {
+  #samplePage {
+    .foo {
+      color: red;
+    }
+  }
+}
+
+// landscape orientation
+@media only screen and (min-width: 768px) {
+  #samplePage {
+    .foo {
+      color: yellow;
+    }
+  }
+}

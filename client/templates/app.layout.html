@@ -1,23 +1,28 @@
 <template name="appContainerTemplate">
-    <div id="appLayoutPanel" class="fullheight padded">
-        <div class="header-row">
-            <div class="panel with-rounded-corners">
-                foo
+    <div class="navbar navbar-inverse navbar-fixed-top bs-docs-nav">
+        <div class="container">
+            <a class="navbar-brand" href="#">Fun With Forms</a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">A</button>
+            <div class="nav-collapse collapse bs-navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="view-button active"><a href="#">Vew</a></li>
+                    <li class="new-button"><a href="#">New</a></li>
+                    <li class="edit-button"><a href="#">Edit</a></li>
+                    <li class="delete-button"><a href="#">Delete</a></li>
+                </ul>
             </div>
         </div>
-        <!--<div class="main-layout-panel">-->
-            <div class="two fullheight columns">
-                <div id="sidebarPanel" class="fullheight panel with-rounded-corners">
-                    {{> formsListTemplate }}
-                </div>
+    </div>
+
+    <div id="appLayoutPanel" class="fullheight padded">
+        <div class="container doesnt-overlap-header">
+            <div id="sidebarPanel" class="col col-lg-3 panel with-rounded-corners">
+                {{> usersListTemplate }}
             </div>
-            <div class="ten fullheight columns">
-                <div id="formPanel" class="fullheight panel with-rounded-corners">
-                    height:  {{height}}
-                </div>
+            <div id="formPanel" class="col col-lg-9 unpadded">
+                {{> formTemplate }}
             </div>
-        <!--</div>-->
+        </div>
     </div>
     <div class="hidden resize-trigger">resized: {{resized}}</div>
 </template>
-

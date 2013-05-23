@@ -1,1 +1,1 @@
-Meteor.subscribe('cfa-forms');
+Meteor.subscribe('customerAccounts');

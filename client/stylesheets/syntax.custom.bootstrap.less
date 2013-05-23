@@ -1,0 +1,66 @@
+@import "bootstrap3/mixins";
+@import "bootstrap3/variables";
+@import "bootstrap3/grid";
+
+// consistent layout
+//#samplePage {
+//}
+
+.list-group-item:hover{
+  background-color: lightgray;
+  cursor: pointer;
+}
+
+.editable{
+  margin-bottom: 20px;
+}
+
+
+
+input,
+select,
+textarea {
+  &[disabled],
+  &[readonly],
+  fieldset[disabled] & {
+    cursor: pointer;
+    background-color: white !important;
+    border: 1px solid white !important;
+  }
+}
+// Explicitly reset the colors here
+input[type="radio"],
+input[type="checkbox"] {
+  &[disabled],
+  &[readonly],
+  fieldset[disabled] & {
+    background-color: transparent;
+  }
+}
+
+
+
+.input-padding{
+
+}
+
+
+
+
+// mobile phone layout
+@media only screen and (max-width: 480px) {
+
+
+}
+
+// portrait orientation
+@media only screen and (max-width: 768px) {
+
+}
+
+// landscape orientation
+@media only screen and (min-width: 768px) {
+  .navbar-fixed-top .navbar-nav{
+    padding-top: 5px;
+  }
+}

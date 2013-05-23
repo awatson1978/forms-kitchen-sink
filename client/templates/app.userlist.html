@@ -1,0 +1,16 @@
+<template name="usersListTemplate">
+    <div id="customerSearchContainer">
+        <input id="customerSearchInput" type="text" placeholder="Filter..."></input>
+    </div>
+    <ul class="list-group">
+        {{#each userList}}
+        {{> userListItemTemplate }}
+        {{/each}}
+    </ul>
+</template>
+
+<template name="userListItemTemplate">
+    <li class="list-group-item">{{FirstName}} {{LastName}}</li>
+</template>
+
+

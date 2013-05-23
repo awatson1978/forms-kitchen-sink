@@ -2,15 +2,16 @@
   "meteor": {
     "git": "https://github.com/meteor/meteor.git",
     "branch": "master",
-    "commit": "bfe4b72ebec4367eaddcdf0887fcf5e649d9dcb8"
+    "commit": "5d736d4bf0448c7db1f9b47124dfafc34a9631bb"
   },
   "dependencies": {
     "basePackages": {
       "router": {},
       "device-detection": {},
-      "bootstrap-3": {},
-      "bootstrap-less": {},
-      "foundation": {}
+      "bootstrap-3": {
+        "git": "https://github.com/mangasocial/meteor-bootstrap-3",
+        "branch": "master"
+      }
     },
     "packages": {
       "router": {
@@ -24,19 +25,9 @@
         "commit": "8d865454f32f8ffe1a5281b6e9f9488b2c9bc142"
       },
       "bootstrap-3": {
-        "git": "https://github.com/mangasocial/meteor-bootstrap-3.git",
-        "tag": "v0.2.1",
-        "commit": "a19436ae28a14831c039a89ac3ef0c396864c4da"
-      },
-      "bootstrap-less": {
-        "git": "https://github.com/inhji/meteor-bootstrap-less",
-        "tag": "v0.0.2",
-        "commit": "a04086b7f86f1d3e8f58ab801b37d08c40688693"
-      },
-      "foundation": {
-        "git": "https://github.com/ewall/meteor-foundation.git",
-        "tag": "v4.1.6",
-        "commit": "0fb2a2c4c13822dfaadea0942c66dcc983dbd9a5"
+        "git": "https://github.com/mangasocial/meteor-bootstrap-3",
+        "branch": "master",
+        "commit": "a03a54a55a8088e91aafdd74a409f5a3b6c7aca3"
       },
       "page-js-ie-support": {
         "git": "https://github.com/tmeasday/meteor-page-js-ie-support.git",

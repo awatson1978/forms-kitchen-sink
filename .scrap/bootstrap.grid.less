@@ -1,0 +1,252 @@
+// Grid system
+// --------------------------------------------------
+// Media queries breakpoints
+// --------------------------------------------------
+
+// Tiny screen / phone
+@screen-tiny:                480px;
+@screen-phone:               @screen-tiny;
+
+// Small screen / tablet
+@screen-small:               768px;
+@screen-tablet:              @screen-small;
+
+// Medium screen / desktop
+@screen-medium:              992px;
+@screen-desktop:             @screen-medium;
+
+// So media queries don't overlap when required, provide a maximum
+@screen-small-max:           (@screen-medium - 1);
+@screen-tablet-max:          @screen-small-max;
+
+// Large screen / wide desktop
+@screen-large:               1200px;
+@screen-large-desktop:       @screen-large;
+// Number of columns in the grid system
+@grid-columns:              12;
+// Padding, to be divided by two and applied to the left and right of all columns
+@grid-gutter-width:         30px;
+// Point at which the navbar stops collapsing
+@grid-float-breakpoint:     @screen-tablet;
+
+
+
+// ---------------------------------------------------------------
+// Grid System
+
+
+// Set the container width, and override it for fixed navbars in media queries
+.container {
+  .container-fixed();
+}
+
+// Mobile-first defaults
+.row {
+  .make-row();
+}
+
+
+// Common styles for small and large grid columns
+.col {
+  position: relative;
+// Float and set width: 100%; for easy stacking on mobile devices
+  float: left;
+  width: 100%;
+// Prevent columns from collapsing when empty
+  min-height: 1px;
+// Inner gutter via padding
+  padding-left:  (@grid-gutter-width / 2);
+  padding-right: (@grid-gutter-width / 2);
+}
+
+// Generate small grid classes first
+  .generate-grid-columns(@grid-columns);
+
+// Then generate the larger grid classes via media query
+@media screen and (min-width: @screen-small) {
+  .generate-large-grid-columns(@grid-columns);
+}
+
+
+// Responsive: Tablets and up
+@media screen and (min-width: @screen-tablet) {
+  .container {
+    max-width: 728px;
+  }
+  .row {
+    margin-left:  (@grid-gutter-width / -2);
+    margin-right: (@grid-gutter-width / -2);
+  }
+}
+
+// Responsive: Desktops and up
+@media screen and (min-width: @screen-desktop) {
+  .container {
+    max-width: 940px;
+  }
+}
+
+// Responsive: Large desktops and up
+@media screen and (min-width: @screen-large-desktop) {
+  .container {
+    max-width: 1170px;
+  }
+}
+
+// Reset utility classes due to specificity
+/*[class*="col-span-"].pull-right {
+  float: right;
+}*/
+
+
+// ---------------------------------------------------------------
+// Grid System
+
+// Centered container element
+.container-fixed() {
+  margin-right: auto;
+  margin-left: auto;
+  .clearfix();
+}
+
+// Make a grid
+
+// Creates a wrapper for a series of columns
+.make-row() {
+// Then clear the floated columns
+  .clearfix();
+
+// Negative margin nested rows out to align the content of columns
+  .row {
+    margin-left:  (@grid-gutter-width / -2);
+    margin-right: (@grid-gutter-width / -2);
+  }
+}
+// Generate the columns
+.make-column(@columns) {
+  position: relative;
+// Float and set width: 100%; for easy stacking on mobile devices
+  float: left;
+  width: 100%;
+// Prevent columns from collapsing when empty
+  min-height: 1px;
+// Inner gutter via padding
+  padding-left:  (@grid-gutter-width / 2);
+  padding-right: (@grid-gutter-width / 2);
+
+// Calculate width based on number of columns available
+  @media (min-width: @grid-float-breakpoint) {
+    width: percentage((@columns / @grid-columns));
+  }
+}
+// Generate the column offsets
+.make-column-offset(@columns) {
+  @media (min-width: @grid-float-breakpoint) {
+    margin-left: percentage((@columns / @grid-columns));
+  }
+}
+.make-column-push(@columns) {
+  @media (min-width: @grid-float-breakpoint) {
+    left: percentage((@columns / @grid-columns));
+  }
+}
+.make-column-pull(@columns) {
+  @media (min-width: @grid-float-breakpoint) {
+    right: percentage((@columns / @grid-columns));
+  }
+}
+
+// Clearfix
+// Source: http://nicolasgallagher.com/micro-clearfix-hack/
+//
+// For modern browsers
+// 1. The space content is one way to avoid an Opera bug when the
+//    contenteditable attribute is included anywhere else in the document.
+//    Otherwise it causes space to appear at the top and bottom of elements
+//    that are clearfixed.
+// 2. The use of `table` rather than `block` is only necessary if using
+//    `:before` to contain the top-margins of child elements.
+.clearfix() {
+  &:before,
+  &:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Small grid columns
+.generate-grid-columns(@grid-columns) {
+
+  .col-sm-X (@index) when (@index > 0) {
+      .col-sm-@{index} { .col-sm-(@index); }
+    .col-sm-X((@index - 1));
+    }
+  .col-sm-X (0) {}
+
+  // Generate columns
+    .col-sm-X(@grid-columns);
+
+  // Apply the styles
+  .col-sm-(@columns) {
+    width: percentage((@columns / @grid-columns));
+  }
+}
+
+// Large grid columns
+.generate-large-grid-columns(@grid-columns) {
+
+  .col-lg-X (@index) when (@index > 0) {
+      .col-lg-@{index} { .col-lg-(@index); }
+    .col-lg-X((@index - 1));
+    }
+  .col-lg-X (0) {}
+
+  // Generate the columns
+    .col-lg-X(@grid-columns);
+
+  // Apply the styles
+  .col-lg-(@columns) {
+    width: percentage((@columns / @grid-columns));
+  }
+
+// Offsets (gaps between columns)
+.col-offset-X (@index) when (@index > 0) {
+  .col-offset-@{index} { .col-offset-(@index); }
+  .col-offset-X((@index - 1));
+  }
+.col-offset-X (0) {}
+
+// Source ordering
+.col-push-X (@index) when (@index > 0) {
+  .col-push-@{index} { .col-push-(@index); }
+  .col-push-X((@index - 1));
+  }
+.col-push-X (0) {}
+
+// Source ordering
+.col-pull-X (@index) when (@index > 0) {
+  .col-pull-@{index} { .col-pull-(@index); }
+  .col-pull-X((@index - 1));
+  }
+.col-pull-X (0) {}
+
+// Apply the styles
+.col-offset-(@columns) {
+  margin-left: percentage((@columns / @grid-columns));
+}
+.col-push-(@columns) {
+  left: percentage((@columns / @grid-columns));
+}
+.col-pull-(@columns) {
+  right: percentage((@columns / @grid-columns));
+}
+
+// Generate .spanX and .offsetX
+  .col-offset-X(@grid-columns);
+  .col-push-X(@grid-columns);
+  .col-pull-X(@grid-columns);
+  }
+

@@ -2,8 +2,8 @@
   "packages": {
     "router": {},
     "device-detection": {},
-    "bootstrap-3": {},
-    "bootstrap-less": {},
-    "foundation": {}
+    "bootstrap-3": {
+      "git": "https://github.com/mangasocial/meteor-bootstrap-3"
+    }
   }
 }
