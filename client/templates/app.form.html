@@ -1,15 +1,8 @@
 
 <template name="formTemplate">
     {{#with user}}
-    <div class="padded container">
+    <div class="padded">
         <div class="meteor-form">
-            <div class="radio container right with-bottom-padding">
-                <label for="optionsRadiosEnabled">Enabled</label>
-                <input type="radio" name="acountStatusRadios" id="optionsRadiosEnabled" value="enabled" checked>
-                <label for="optionsRadiosDisabled">Disabled</label>
-                <input type="radio" name="acountStatusRadios" id="optionsRadiosDisabled" value="disabled">
-            </div>
-
             <label class="smallgray" for="firstNameInput">First Name</label>
             <input id="firstNameInput" type="text" placeholder="First Name" value="{{FirstName}}" {{first_name_enabled}}></input>
 
@@ -48,6 +41,15 @@
 
             <textarea id="notesInput" rows="3" placeholder="Notes" value="Lorem ipsum..."  {{web_enabled}}></textarea>
 
+            <!--<div class="radio container right with-bottom-padding">-->
+                <!--<label for="optionsRadiosEnabled">Enabled</label>-->
+                <!--<input type="radio" name="acountStatusRadios" id="optionsRadiosEnabled" value="enabled" checked>-->
+                <!--<label for="optionsRadiosDisabled">Disabled</label>-->
+                <!--<input type="radio" name="acountStatusRadios" id="optionsRadiosDisabled" value="disabled">-->
+            <!--</div>-->
+
+            <br>
+            <br>
 
             <div class="checkboxes">
                 <label for="adminCheckbox">admin</label>
@@ -60,19 +62,6 @@
                 <input id="userCheckbox" type="checkbox" value="">
                 <input id="guestCheckbox" type="checkbox" value="" checked>
             </div>
-            <br>
-            <br>
-
-            <br>
-            <br>
-
-
-            <!--<select>-->
-                <!--<option>Admin</option>-->
-                <!--<option>Moderator</option>-->
-                <!--<option>User</option>-->
-                <!--<option>Guest</option>-->
-            <!--</select>-->
         </form>
     </div>
         {{/with}}
