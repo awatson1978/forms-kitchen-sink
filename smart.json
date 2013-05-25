@@ -2,8 +2,8 @@
   "packages": {
     "router": {},
     "device-detection": {},
-    "bootstrap-3": {
-      "git": "https://github.com/mangasocial/meteor-bootstrap-3"
+    "datasets-customers":{
+      "git": "https://github.com/awatson1978/datasets-customers"
     }
   }
 }

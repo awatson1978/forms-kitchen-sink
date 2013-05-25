@@ -1,14 +1,64 @@
+@import "bootstrap3/mixins";
+@import "bootstrap3/variables";
+@import "bootstrap3/grid";
+@import "bootstrap3/buttons";
 
 // consistent layout
 input{
-  margin-bottom: 20px;
+  //margin-bottom: 20px;
 }
 
-#samplePage {
-  .foo {
-    color: lightgray;
-  }
+
+
+
+.radio label, .checkboxes label{
+  .btn;
+  .btn-primary;
 }
+input[type="radio"], input[type="checkbox"]{
+  filter:alpha(opacity=0);
+  -moz-opacity:0;
+  -khtml-opacity: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.meteor-form label.smallgray{
+  position: relative;
+  top: 25px;
+  float: right;
+  color: lightgray;
+  padding-right: 10px;
+  font-weight: normal;
+}
+
+
+
+// Alternate buttons
+// --------------------------------------------------
+
+.chk-default {
+  .btn-pseudo-states(@btn-default-color, @btn-default-bg, @btn-default-border);
+}
+.chk-primary {
+  .btn-pseudo-states(@btn-primary-color, @btn-primary-bg, @btn-primary-border);
+}
+// Warning appears as orange
+.chk-warning {
+  .btn-pseudo-states(@btn-warning-color, @btn-warning-bg, @btn-warning-border);
+}
+// Danger and error appear as red
+.chk-danger {
+  .btn-pseudo-states(@btn-danger-color, @btn-danger-bg, @btn-danger-border);
+}
+// Success appears as green
+.chk-success {
+  .btn-pseudo-states(@btn-success-color, @btn-success-bg, @btn-success-border);
+}
+// Info appears as blue-green
+.chk-info {
+  .btn-pseudo-states(@btn-info-color, @btn-info-bg, @btn-info-border);
+}
+
 
 
 // mobile phone layout
@@ -37,3 +87,5 @@ input{
     }
   }
 }
+
+
