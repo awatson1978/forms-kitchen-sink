@@ -24,7 +24,7 @@
                 <label class="smallgray" for="webInput">Website</label>
 
             </div>
-            <div class="col col-lg-6 with-bottom-padding">
+            <div class="col col-lg-6 ">
                 <input id="lastNameInput" type="text" placeholder="Last Name" value="{{LastName}}"  {{last_name_enabled}}></input>
                 <label class="smallgray" for="lastNameInput">Last Name</label>
 
@@ -44,11 +44,28 @@
                 <label class="smallgray" for="emailInput">Email</label>
 
             </div>
-            <div class="col col-lg-12">
+            <div class="col col-lg-12 with-bottom-padding">
                 <textarea id="notesInput" rows="3" placeholder="Notes" value="Lorem ipsum..."  {{web_enabled}}></textarea>
             </div>
 
 
+
+
+
+            <!--input[type="text"],-->
+            <!--input[type="password"],-->
+            <!--input[type="datetime"],-->
+            <!--input[type="datetime-local"],-->
+            <!--input[type="date"],-->
+            <!--input[type="month"],-->
+            <!--input[type="time"],-->
+            <!--input[type="week"],-->
+            <!--input[type="number"],-->
+            <!--input[type="email"],-->
+            <!--input[type="url"],-->
+            <!--input[type="search"],-->
+            <!--input[type="tel"],-->
+            <!--input[type="color"] {-->
 
             <!--<div class="radio container right with-bottom-padding">-->
                 <!--<label for="optionsRadiosEnabled">Enabled</label>-->
@@ -71,18 +88,15 @@
                 <!--<input id="userCheckbox" type="checkbox" value="">-->
                 <!--<input id="guestCheckbox" type="checkbox" value="" checked>-->
             <!--</div>-->
-        </form>
-    </div>
-        {{/with}}
 
-        {{#if isNewTask}}
-            <div class="padded container">
+            {{#if isNewTask}}
+            <div class="padded col col-lg-12">
                 <button id="newUserButton" type="button" class="fullwidth btn btn-info" width="100%">Create New User!</button>
             </div>
-        {{/if}}
+            {{/if}}
 
-        {{#if isDeletingTask}}
-            <div class="padded container">
+            {{#if isDeletingTask}}
+            <div class="padded col col-lg-12 with-bottom-padding">
                 <div class="alert alert-danger">
                     <h4 class="centered">Are you sure you want to delete this user?</h4>
                     <div class="container">
@@ -96,5 +110,8 @@
                     </div>
                 </div>
             </div>
-        {{/if}}
+            {{/if}}
+        </form>
+    </div>
+    {{/with}}
 </template>
