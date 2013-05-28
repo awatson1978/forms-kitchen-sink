@@ -18,7 +18,7 @@ Session.set('editing_web', false);
 
 
 
-
+Session.set('account_search_term', '');
 
 
 

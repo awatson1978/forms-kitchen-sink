@@ -3,43 +3,52 @@
     {{#with user}}
     <div class="padded">
         <div class="meteor-form">
-            <label class="smallgray" for="firstNameInput">First Name</label>
-            <input id="firstNameInput" type="text" placeholder="First Name" value="{{FirstName}}" {{first_name_enabled}}></input>
+            <!-- don't add with-bottom-padding to the first column, so it displays on mobile correctly -->
+            <div class="col col-lg-6">
+                <input id="firstNameInput" type="text" placeholder="First Name" value="{{FirstName}}" {{first_name_enabled}}></input>
+                <label class="smallgray" for="firstNameInput">First Name</label>
 
-            <label class="smallgray" for="lastNameInput">Last Name</label>
-            <input id="lastNameInput" type="text" placeholder="Last Name" value="{{LastName}}"  {{last_name_enabled}}></input>
+                <input id="companyInput" type="text" placeholder="Company" value="{{Company}}"  {{company_enabled}}></input>
+                <label class="smallgray" for="companyInput">Company</label>
 
-            <label class="smallgray" for="companyInput">Company</label>
-            <input id="companyInput" type="text" placeholder="Company" value="{{Company}}"  {{company_enabled}}></input>
+                <input id="addressInput" type="text" placeholder="Address" value="{{Address}}"  {{address_enabled}}></input>
+                <label class="smallgray" for="addressInput">Address</label>
 
-            <label class="smallgray" for="addressInput">Address</label>
-            <input id="addressInput" type="text" placeholder="Address" value="{{Address}}"  {{address_enabled}}></input>
+                <input id="cityInput" type="text" placeholder="City" value="{{City}}"  {{city_enabled}}></input>
+                <label class="smallgray" for="cityInput">City</label>
 
-            <label class="smallgray" for="cityInput">City</label>
-            <input id="cityInput" type="text" placeholder="City" value="{{City}}"  {{city_enabled}}></input>
+                <input id="phoneInput" type="text" placeholder="Phone" value="{{Phone}}"  {{phone_enabled}}></input>
+                <label class="smallgray" for="phoneInput">Phone</label>
 
-            <label class="smallgray" for="countyInput">County</label>
-            <input id="countyInput" type="text" placeholder="County" value="{{County}}"  {{county_enabled}}></input>
+                <input id="webInput" type="text" placeholder="Web" value="{{Web}}"  {{web_enabled}}></input>
+                <label class="smallgray" for="webInput">Website</label>
 
-            <label class="smallgray" for="stateInput">State</label>
-            <input id="stateInput" type="text" placeholder="State" value="{{State}}"  {{state_enabled}}></input>
+            </div>
+            <div class="col col-lg-6 with-bottom-padding">
+                <input id="lastNameInput" type="text" placeholder="Last Name" value="{{LastName}}"  {{last_name_enabled}}></input>
+                <label class="smallgray" for="lastNameInput">Last Name</label>
 
-            <label class="smallgray" for="zipInput">Zip</label>
-            <input id="zipInput" type="text" placeholder="Zip" value="{{ZIP}}"  {{zip_enabled}}></input>
+                <input id="countyInput" type="text" placeholder="County" value="{{County}}"  {{county_enabled}}></input>
+                <label class="smallgray" for="countyInput">County</label>
 
-            <label class="smallgray" for="phoneInput">Phone</label>
-            <input id="phoneInput" type="text" placeholder="Phone" value="{{Phone}}"  {{phone_enabled}}></input>
+                <input id="stateInput" type="text" placeholder="State" value="{{State}}"  {{state_enabled}}></input>
+                <label class="smallgray" for="stateInput">State</label>
 
-            <label class="smallgray" for="faxInput">Fax</label>
-            <input id="faxInput" type="text" placeholder="Fax" value="{{Fax}}"  {{fax_enabled}}></input>
+                <input id="zipInput" type="text" placeholder="Zip" value="{{ZIP}}"  {{zip_enabled}}></input>
+                <label class="smallgray" for="zipInput">Zip</label>
 
-            <label class="smallgray" for="emailInput">Email</label>
-            <input id="emailInput" type="text" placeholder="Email" value="{{Email}}"  {{email_enabled}}></input>
+                <input id="faxInput" type="text" placeholder="Fax" value="{{Fax}}"  {{fax_enabled}}></input>
+                <label class="smallgray" for="faxInput">Fax</label>
 
-            <label class="smallgray" for="webInput">Website</label>
-            <input id="webInput" type="text" placeholder="Web" value="{{Web}}"  {{web_enabled}}></input>
+                <input id="emailInput" type="text" placeholder="Email" value="{{Email}}"  {{email_enabled}}></input>
+                <label class="smallgray" for="emailInput">Email</label>
 
-            <textarea id="notesInput" rows="3" placeholder="Notes" value="Lorem ipsum..."  {{web_enabled}}></textarea>
+            </div>
+            <div class="col col-lg-12">
+                <textarea id="notesInput" rows="3" placeholder="Notes" value="Lorem ipsum..."  {{web_enabled}}></textarea>
+            </div>
+
+
 
             <!--<div class="radio container right with-bottom-padding">-->
                 <!--<label for="optionsRadiosEnabled">Enabled</label>-->
@@ -48,20 +57,20 @@
                 <!--<input type="radio" name="acountStatusRadios" id="optionsRadiosDisabled" value="disabled">-->
             <!--</div>-->
 
-            <br>
-            <br>
+            <!--<br>-->
+            <!--<br>-->
 
-            <div class="checkboxes">
-                <label for="adminCheckbox">admin</label>
-                <label for="moderatorCheckbox">moderator</label>
-                <label for="userCheckbox">user</label>
-                <label for="guestCheckbox">guest</label>
+            <!--<div class="checkboxes">-->
+                <!--<label for="adminCheckbox">admin</label>-->
+                <!--<label for="moderatorCheckbox">moderator</label>-->
+                <!--<label for="userCheckbox">user</label>-->
+                <!--<label for="guestCheckbox">guest</label>-->
 
-                <input id="adminCheckbox" type="checkbox" value="Admin">
-                <input id="moderatorCheckbox" type="checkbox" value="">
-                <input id="userCheckbox" type="checkbox" value="">
-                <input id="guestCheckbox" type="checkbox" value="" checked>
-            </div>
+                <!--<input id="adminCheckbox" type="checkbox" value="Admin">-->
+                <!--<input id="moderatorCheckbox" type="checkbox" value="">-->
+                <!--<input id="userCheckbox" type="checkbox" value="">-->
+                <!--<input id="guestCheckbox" type="checkbox" value="" checked>-->
+            <!--</div>-->
         </form>
     </div>
         {{/with}}

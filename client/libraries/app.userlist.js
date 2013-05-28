@@ -1,11 +1,13 @@
 Template.usersListTemplate.userList = function(){
     try{
+        //return CustomerAccounts.find();
         return CustomerAccounts.find({
-            $or: [
-                {'FirstName': { $regex: Session.get('user_search_term'), $options: 'i' }},
-                {'LastName':  { $regex: Session.get('user_search_term'), $options: 'i' }}
-            ]
-        },{limit: 20});
+        'FirstName': { $regex: Session.get('account_search_term'), $options: 'i' }
+//            $or: [
+//                {'FirstName': { $regex: Session.get('user_search_term'), $options: 'i' }},
+//                {'LastName':  { $regex: Session.get('user_search_term'), $options: 'i' }}
+//            ]
+        },{limit: 10});
     }catch(error){
         console.log(error);
     }
@@ -19,7 +21,9 @@ Template.userListItemTemplate.events({
 Template.usersListTemplate.events({
     'keyup #customerSearchInput': function(evt,tmpl){
         try{
-            Session.set('user_search_term', $('#customerSearchInput').val());
+            //Session.set('user_search_term', $('#customerSearchInput').val());
+            Session.set('account_search_term', $('#customerSearchInput').val());
+            console.log($('#customerSearchInput').val());
             Meteor.flush();
         }catch(err){
             console.log(err);

@@ -3,13 +3,41 @@
 @import "bootstrap3/grid";
 @import "bootstrap3/buttons";
 
-// consistent layout
-input{
-  //margin-bottom: 20px;
+
+
+.list-header{
+  .btn-pseudo-states(@btn-default-color, @btn-default-bg, @btn-default-border);
+}
+
+// Form - Text Inputs
+.dataset-menu{
+  height: 100px;
+  width: 100px;
+  border: 2px solid darkgray;
+  cursor: pointer;
+}
+
+.dataset-menu:hover{
+  border: 2px solid orangered;
+}
+
+.menu-item{
+  padding-bottom: 20px;
+  height: 140px;
+}
+.menu-label{
+  padding-left: 20px;
+  font-weight: 24px;
+}
+.menu-synopsis{
+  position: relative;
+  top: -100px;
+  left: 120px;
 }
 
 
 
+// Form - Radios and Checkboxes
 
 .radio label, .checkboxes label{
   .btn;
@@ -24,13 +52,12 @@ input[type="radio"], input[type="checkbox"]{
 }
 .meteor-form label.smallgray{
   position: relative;
-  top: 25px;
+  top: -30px;
   float: right;
   color: lightgray;
   padding-right: 10px;
   font-weight: normal;
 }
-
 
 
 // Alternate buttons
@@ -63,29 +90,20 @@ input[type="radio"], input[type="checkbox"]{
 
 // mobile phone layout
 @media only screen and (max-width: 480px) {
-  #samplePage {
-    .foo {
-      color: blue;
-    }
-  }
+
 }
 
 // portrait orientation
 @media only screen and (max-width: 768px) {
-  #samplePage {
-    .foo {
-      color: red;
-    }
+  #formPanel .padded{
+    padding-left: 0px;
+    padding-right: 0px;
   }
 }
 
 // landscape orientation
 @media only screen and (min-width: 768px) {
-  #samplePage {
-    .foo {
-      color: yellow;
-    }
-  }
+
 }
 
 
