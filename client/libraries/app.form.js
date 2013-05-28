@@ -421,6 +421,13 @@ Template.formTemplate.web_enabled = function(){
         return "readonly";
     }
 };
+Template.formTemplate.generic_enabled = function(){
+    if(Session.get('global_edit')){
+        return "enabled";
+    }else{
+        return "readonly";
+    }
+};
 
 
 

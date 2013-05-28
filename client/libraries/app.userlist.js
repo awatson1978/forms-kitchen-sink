@@ -2,11 +2,11 @@ Template.usersListTemplate.userList = function(){
     try{
         //return CustomerAccounts.find();
         return CustomerAccounts.find({
-        'FirstName': { $regex: Session.get('account_search_term'), $options: 'i' }
-//            $or: [
-//                {'FirstName': { $regex: Session.get('user_search_term'), $options: 'i' }},
-//                {'LastName':  { $regex: Session.get('user_search_term'), $options: 'i' }}
-//            ]
+        //'FirstName': { $regex: Session.get('account_search_term'), $options: 'i' }
+            $or: [
+                {'FirstName': { $regex: Session.get('account_search_term'), $options: 'i' }},
+                {'LastName':  { $regex: Session.get('account_search_term'), $options: 'i' }}
+            ]
         },{limit: 10});
     }catch(error){
         console.log(error);
