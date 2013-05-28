@@ -17,12 +17,11 @@
                 <input id="cityInput" type="text" placeholder="City" value="{{City}}"  {{city_enabled}}></input>
                 <label class="smallgray" for="cityInput">City</label>
 
-                <input id="phoneInput" type="text" placeholder="Phone" value="{{Phone}}"  {{phone_enabled}}></input>
+                <input id="phoneInput" type="tel" placeholder="Phone" value="{{Phone}}"  {{phone_enabled}}></input>
                 <label class="smallgray" for="phoneInput">Phone</label>
 
-                <input id="webInput" type="text" placeholder="Web" value="{{Web}}"  {{web_enabled}}></input>
+                <input id="webInput" type="url" placeholder="Web" value="{{Web}}"  {{web_enabled}}></input>
                 <label class="smallgray" for="webInput">Website</label>
-
             </div>
             <div class="col col-lg-6 ">
                 <input id="lastNameInput" type="text" placeholder="Last Name" value="{{LastName}}"  {{last_name_enabled}}></input>
@@ -37,35 +36,45 @@
                 <input id="zipInput" type="text" placeholder="Zip" value="{{ZIP}}"  {{zip_enabled}}></input>
                 <label class="smallgray" for="zipInput">Zip</label>
 
-                <input id="faxInput" type="text" placeholder="Fax" value="{{Fax}}"  {{fax_enabled}}></input>
+                <input id="faxInput" type="tel" placeholder="Fax" value="{{Fax}}"  {{fax_enabled}}></input>
                 <label class="smallgray" for="faxInput">Fax</label>
 
-                <input id="emailInput" type="text" placeholder="Email" value="{{Email}}"  {{email_enabled}}></input>
+                <input id="emailInput" type="email" placeholder="Email" value="{{Email}}"  {{email_enabled}}></input>
                 <label class="smallgray" for="emailInput">Email</label>
-
             </div>
             <div class="col col-lg-12 with-bottom-padding">
                 <textarea id="notesInput" rows="3" placeholder="Notes" value="Lorem ipsum..."  {{web_enabled}}></textarea>
             </div>
 
 
+            <div class="col col-lg-6">
+                <input id="passwordInput" type="password" placeholder="password" value="password" {{first_name_enabled}}></input>
+                <label class="smallgray" for="passwordInput"></label>
+
+                <input id="birthdateInput" type="datetime" placeholder="01/01/2013" value="01/01/2013" {{first_name_enabled}}></input>
+                <label class="smallgray" for="birthdateInput"></label>
+
+                <input id="dateInput" type="date" placeholder="01/01/2013" value="01/01/2013" {{first_name_enabled}}></input>
+                <label class="smallgray" for="dateInput"></label>
+
+                <input id="monthInput" type="month" placeholder="January" value="January" {{first_name_enabled}}></input>
+                <label class="smallgray" for="monthInput"></label>
+
+                <input id="weekInput" type="text" placeholder="Monday" value="Monday" {{first_name_enabled}}></input>
+                <label class="smallgray" for="weekInput"></label>
+
+                <input id="timeInput" type="time" placeholder="12:30 30" value="" {{first_name_enabled}}></input>
+                <label class="smallgray" for="timeInput"></label>
+            </div>
+            <div class="col col-lg-6 ">
+                <input id="numberInput" type="number" placeholder="123456" value="123456"  {{last_name_enabled}}></input>
+                <label class="smallgray" for="numberInput"></label>
+
+                <input id="colorInput" type="color" placeholder="#33ff88" value="#33ff88" {{first_name_enabled}}></input>
+                <label class="smallgray" for="colorInput"></label>
+            </div>
 
 
-
-            <!--input[type="text"],-->
-            <!--input[type="password"],-->
-            <!--input[type="datetime"],-->
-            <!--input[type="datetime-local"],-->
-            <!--input[type="date"],-->
-            <!--input[type="month"],-->
-            <!--input[type="time"],-->
-            <!--input[type="week"],-->
-            <!--input[type="number"],-->
-            <!--input[type="email"],-->
-            <!--input[type="url"],-->
-            <!--input[type="search"],-->
-            <!--input[type="tel"],-->
-            <!--input[type="color"] {-->
 
             <!--<div class="radio container right with-bottom-padding">-->
                 <!--<label for="optionsRadiosEnabled">Enabled</label>-->
