@@ -2,8 +2,9 @@
   "packages": {
     "router": {},
     "device-detection": {},
-    "datasets-customers":{
+    "datasets-customers": {
       "git": "https://github.com/awatson1978/datasets-customers"
-    }
+    },
+    "moment": {}
   }
 }

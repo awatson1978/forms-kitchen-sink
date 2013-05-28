@@ -8,3 +8,5 @@ less
 router
 jquery
 device-detection
+moment
+random
