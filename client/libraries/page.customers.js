@@ -1,5 +1,5 @@
 //-------------------------------------------------------------
-// A. Sessions Variables
+// 0. Sessions Variables
 
 Session.set('editing_first_name', false);
 Session.set('editing_last_name', false);
@@ -26,9 +26,46 @@ Session.set('editing_color', false);
 Session.set('is_deleting_task', false);
 
 //-------------------------------------------------------------
+// A.  Index Functions
+
+Template.customersListTemplate.customersList = function(){
+    try{
+        return CustomerAccounts.find({
+            //FirstName: { $regex: Session.get('account_search_term'), $options: 'i' }
+            $or: [
+                {'FirstName': { $regex: Session.get('account_search_term'), $options: 'i' }},
+                {'LastName':  { $regex: Session.get('account_search_term'), $options: 'i' }}
+            ]
+        },{limit: 10});
+    }catch(error){
+        console.log(error);
+    }
+};
+Template.customersListItemTemplate.events({
+    'click .list-group-item':function(event, template){
+        Session.set('selected_user', this._id);
+        Session.set('current_task','view');
+        Session.set('global_edit', false);
+    }
+});
+Template.customersListItemTemplate.events({
+    'keyup #customerSearchInput': function(evt,tmpl){
+        try{
+            //Session.set('user_search_term', $('#customerSearchInput').val());
+            Session.set('account_search_term', $('#customerSearchInput').val());
+            console.log($('#customerSearchInput').val());
+            Meteor.flush();
+        }catch(err){
+            console.log(err);
+        }
+    }
+});
+
+
+//-------------------------------------------------------------
 // B.  Helpers
 
-Template.formTemplate.helpers({
+Template.customerFormTemplate.helpers({
     user: function(){
         try{
             if(Session.get('current_task') == 'new'){
@@ -46,7 +83,7 @@ Template.formTemplate.helpers({
 //-------------------------------------------------------------
 // C. Event Map
 
-Template.formTemplate.events({
+Template.customerFormTemplate.events({
 
     //-------------------------------------------------------------
     // 1. Desktop Clicks - Editing
@@ -227,7 +264,7 @@ Template.formTemplate.events({
     // 3. Submit
     // 4. Stop Editing
 
-Template.formTemplate.events(
+Template.customerFormTemplate.events(
     okCancelEvents('#firstNameInput',
         {
             ok: function (value) {
@@ -240,7 +277,7 @@ Template.formTemplate.events(
             }
         })
 );
-Template.formTemplate.events(
+Template.customerFormTemplate.events(
     okCancelEvents('#lastNameInput',
         {
             ok: function (value) {
@@ -257,7 +294,7 @@ Template.formTemplate.events(
             }
         })
 );
-Template.formTemplate.events(
+Template.customerFormTemplate.events(
     okCancelEvents('#companyInput',
         {
             ok: function (value) {
@@ -270,7 +307,7 @@ Template.formTemplate.events(
             }
         })
 );
-Template.formTemplate.events(
+Template.customerFormTemplate.events(
     okCancelEvents('#addressInput',
         {
             ok: function (value) {
@@ -283,7 +320,7 @@ Template.formTemplate.events(
             }
         })
 );
-Template.formTemplate.events(
+Template.customerFormTemplate.events(
     okCancelEvents('#cityInput',
         {
             ok: function (value) {
@@ -296,7 +333,7 @@ Template.formTemplate.events(
             }
         })
 );
-Template.formTemplate.events(
+Template.customerFormTemplate.events(
     okCancelEvents('#countyInput',
         {
             ok: function (value) {
@@ -309,7 +346,7 @@ Template.formTemplate.events(
             }
         })
 );
-Template.formTemplate.events(
+Template.customerFormTemplate.events(
     okCancelEvents('#stateInput',
         {
             ok: function (value) {
@@ -322,7 +359,7 @@ Template.formTemplate.events(
             }
         })
 );
-Template.formTemplate.events(
+Template.customerFormTemplate.events(
     okCancelEvents('#zipInput',
         {
             ok: function (value) {
@@ -335,7 +372,7 @@ Template.formTemplate.events(
             }
         })
 );
-Template.formTemplate.events(
+Template.customerFormTemplate.events(
     okCancelEvents('#phoneInput',
         {
             ok: function (value) {
@@ -348,7 +385,7 @@ Template.formTemplate.events(
             }
         })
 );
-Template.formTemplate.events(
+Template.customerFormTemplate.events(
     okCancelEvents('#faxInput',
         {
             ok: function (value) {
@@ -361,7 +398,7 @@ Template.formTemplate.events(
             }
         })
 );
-Template.formTemplate.events(
+Template.customerFormTemplate.events(
     okCancelEvents('#emailInput',
         {
             ok: function (value) {
@@ -374,7 +411,7 @@ Template.formTemplate.events(
             }
         })
 );
-Template.formTemplate.events(
+Template.customerFormTemplate.events(
     okCancelEvents('#webInput',
         {
             ok: function (value) {
@@ -390,7 +427,7 @@ Template.formTemplate.events(
 
 
 
-Template.formTemplate.events(
+Template.customerFormTemplate.events(
     okCancelEvents('#passwordInput',
         {
             ok: function (value) {
@@ -403,7 +440,7 @@ Template.formTemplate.events(
             }
         })
 );
-Template.formTemplate.events(
+Template.customerFormTemplate.events(
     okCancelEvents('#dateInput',
         {
             ok: function (value) {
@@ -416,7 +453,7 @@ Template.formTemplate.events(
             }
         })
 );
-Template.formTemplate.events(
+Template.customerFormTemplate.events(
     okCancelEvents('#birthdateInput',
         {
             ok: function (value) {
@@ -429,7 +466,7 @@ Template.formTemplate.events(
             }
         })
 );
-Template.formTemplate.events(
+Template.customerFormTemplate.events(
     okCancelEvents('#monthInput',
         {
             ok: function (value) {
@@ -442,7 +479,7 @@ Template.formTemplate.events(
             }
         })
 );
-Template.formTemplate.events(
+Template.customerFormTemplate.events(
     okCancelEvents('#weekInput',
         {
             ok: function (value) {
@@ -455,7 +492,7 @@ Template.formTemplate.events(
             }
         })
 );
-Template.formTemplate.events(
+Template.customerFormTemplate.events(
     okCancelEvents('#timeInput',
         {
             ok: function (value) {
@@ -468,7 +505,7 @@ Template.formTemplate.events(
             }
         })
 );
-Template.formTemplate.events(
+Template.customerFormTemplate.events(
     okCancelEvents('#numberInput',
         {
             ok: function (value) {
@@ -481,7 +518,7 @@ Template.formTemplate.events(
             }
         })
 );
-Template.formTemplate.events(
+Template.customerFormTemplate.events(
     okCancelEvents('#colorInput',
         {
             ok: function (value) {
@@ -499,7 +536,7 @@ Template.formTemplate.events(
 //-------------------------------------------------------------
 // D. Display Readonly Value
 
-Template.formTemplate.first_name_enabled = function(){
+Template.customerFormTemplate.first_name_enabled = function(){
     if(Session.get('global_edit')){
         return "enabled";
     }else if(Session.get('editing_first_name')){
@@ -508,7 +545,7 @@ Template.formTemplate.first_name_enabled = function(){
         return "readonly";
     }
 };
-Template.formTemplate.last_name_enabled = function(){
+Template.customerFormTemplate.last_name_enabled = function(){
     if(Session.get('global_edit')){
         return "enabled";
     }else if(Session.get('editing_last_name')){
@@ -517,7 +554,7 @@ Template.formTemplate.last_name_enabled = function(){
         return "readonly";
     }
 };
-Template.formTemplate.company_enabled = function(){
+Template.customerFormTemplate.company_enabled = function(){
     if(Session.get('global_edit')){
         return "enabled";
     }else if(Session.get('editing_company')){
@@ -526,7 +563,7 @@ Template.formTemplate.company_enabled = function(){
         return "readonly";
     }
 };
-Template.formTemplate.address_enabled = function(){
+Template.customerFormTemplate.address_enabled = function(){
     if(Session.get('global_edit')){
         return "enabled";
     }else if(Session.get('editing_address')){
@@ -535,7 +572,7 @@ Template.formTemplate.address_enabled = function(){
         return "readonly";
     }
 };
-Template.formTemplate.city_enabled = function(){
+Template.customerFormTemplate.city_enabled = function(){
     if(Session.get('global_edit')){
         return "enabled";
     }else if(Session.get('editing_city')){
@@ -544,7 +581,7 @@ Template.formTemplate.city_enabled = function(){
         return "readonly";
     }
 };
-Template.formTemplate.county_enabled = function(){
+Template.customerFormTemplate.county_enabled = function(){
     if(Session.get('global_edit')){
         return "enabled";
     }else if(Session.get('editing_county')){
@@ -553,7 +590,7 @@ Template.formTemplate.county_enabled = function(){
         return "readonly";
     }
 };
-Template.formTemplate.state_enabled = function(){
+Template.customerFormTemplate.state_enabled = function(){
     if(Session.get('global_edit')){
         return "enabled";
     }else if(Session.get('editing_state')){
@@ -562,7 +599,7 @@ Template.formTemplate.state_enabled = function(){
         return "readonly";
     }
 };
-Template.formTemplate.zip_enabled = function(){
+Template.customerFormTemplate.zip_enabled = function(){
     if(Session.get('global_edit')){
         return "enabled";
     }else if(Session.get('editing_zip')){
@@ -571,7 +608,7 @@ Template.formTemplate.zip_enabled = function(){
         return "readonly";
     }
 };
-Template.formTemplate.phone_enabled = function(){
+Template.customerFormTemplate.phone_enabled = function(){
     if(Session.get('global_edit')){
         return "enabled";
     }else if(Session.get('editing_phone')){
@@ -580,7 +617,7 @@ Template.formTemplate.phone_enabled = function(){
         return "readonly";
     }
 };
-Template.formTemplate.fax_enabled = function(){
+Template.customerFormTemplate.fax_enabled = function(){
     if(Session.get('global_edit')){
         return "enabled";
     }else if(Session.get('editing_fax')){
@@ -589,7 +626,7 @@ Template.formTemplate.fax_enabled = function(){
         return "readonly";
     }
 };
-Template.formTemplate.email_enabled = function(){
+Template.customerFormTemplate.email_enabled = function(){
     if(Session.get('global_edit')){
         return "enabled";
     }else if(Session.get('editing_email')){
@@ -598,7 +635,7 @@ Template.formTemplate.email_enabled = function(){
         return "readonly";
     }
 };
-Template.formTemplate.web_enabled = function(){
+Template.customerFormTemplate.web_enabled = function(){
     if(Session.get('global_edit')){
         return "enabled";
     }else if(Session.get('editing_web')){
@@ -609,7 +646,7 @@ Template.formTemplate.web_enabled = function(){
 };
 
 
-Template.formTemplate.password_enabled = function(){
+Template.customerFormTemplate.password_enabled = function(){
     if(Session.get('global_edit')){
         return "enabled";
     }else if(Session.get('editing_password')){
@@ -618,7 +655,7 @@ Template.formTemplate.password_enabled = function(){
         return "readonly";
     }
 };
-Template.formTemplate.date_enabled = function(){
+Template.customerFormTemplate.date_enabled = function(){
     if(Session.get('global_edit')){
         return "enabled";
     }else if(Session.get('editing_date')){
@@ -627,7 +664,7 @@ Template.formTemplate.date_enabled = function(){
         return "readonly";
     }
 };
-Template.formTemplate.datetime_enabled = function(){
+Template.customerFormTemplate.datetime_enabled = function(){
     if(Session.get('global_edit')){
         return "enabled";
     }else if(Session.get('editing_datetime')){
@@ -636,7 +673,7 @@ Template.formTemplate.datetime_enabled = function(){
         return "readonly";
     }
 };
-Template.formTemplate.month_enabled = function(){
+Template.customerFormTemplate.month_enabled = function(){
     if(Session.get('global_edit')){
         return "enabled";
     }else if(Session.get('editing_month')){
@@ -645,7 +682,7 @@ Template.formTemplate.month_enabled = function(){
         return "readonly";
     }
 };
-Template.formTemplate.week_enabled = function(){
+Template.customerFormTemplate.week_enabled = function(){
     if(Session.get('global_edit')){
         return "enabled";
     }else if(Session.get('editing_week')){
@@ -654,7 +691,7 @@ Template.formTemplate.week_enabled = function(){
         return "readonly";
     }
 };
-Template.formTemplate.time_enabled = function(){
+Template.customerFormTemplate.time_enabled = function(){
     if(Session.get('global_edit')){
         return "enabled";
     }else if(Session.get('editing_time')){
@@ -663,7 +700,7 @@ Template.formTemplate.time_enabled = function(){
         return "readonly";
     }
 };
-Template.formTemplate.number_enabled = function(){
+Template.customerFormTemplate.number_enabled = function(){
     if(Session.get('global_edit')){
         return "enabled";
     }else if(Session.get('editing_number')){
@@ -672,7 +709,7 @@ Template.formTemplate.number_enabled = function(){
         return "readonly";
     }
 };
-Template.formTemplate.color_enabled = function(){
+Template.customerFormTemplate.color_enabled = function(){
     if(Session.get('global_edit')){
         return "enabled";
     }else if(Session.get('editing_color')){
@@ -683,7 +720,7 @@ Template.formTemplate.color_enabled = function(){
 };
 
 
-Template.formTemplate.generic_enabled = function(){
+Template.customerFormTemplate.generic_enabled = function(){
     if(Session.get('global_edit')){
         return "enabled";
     }else{
@@ -697,7 +734,7 @@ Template.formTemplate.generic_enabled = function(){
 //-------------------------------------------------------------
 // E. Buttons
 
-Template.formTemplate.isNewTask = function(){
+Template.customerFormTemplate.isNewTask = function(){
     try{
         if(Session.get('current_task') == 'new'){
             return true;
@@ -708,7 +745,7 @@ Template.formTemplate.isNewTask = function(){
         console.log(error);
     }
 };
-Template.formTemplate.isDeletingTask = function(){
+Template.customerFormTemplate.isDeletingTask = function(){
     try{
         if(Session.get('current_task') == 'delete'){
             return true;
@@ -721,7 +758,7 @@ Template.formTemplate.isDeletingTask = function(){
 };
 
 
-Template.formTemplate.events({
+Template.customerFormTemplate.events({
     'click #newUserButton': function(){
         console.log('creating new user...');
 

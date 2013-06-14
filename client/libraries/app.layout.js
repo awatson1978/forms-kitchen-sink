@@ -22,3 +22,7 @@ Template.appContainerTemplate.events({
 Template.appContainerTemplate.title = function(){
     return Session.get('account_search_term');
 }
+
+
+//-----------------------------------------------------
+// NAVBARS
