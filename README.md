@@ -13,7 +13,7 @@ sudo mrt
 ------------------------
 ### Notes
 
-This applet demonstrates how to use <input> elements with a pure-Meteor CRUD pattern.  It doesn't use <form> tags, and it doesn't auto-build a form using a JSON object.  It's intent is for the form builder who wants a high degree of granularity and control in builder his or her user interfaces.
+This applet demonstrates how to use <input> elements with a pure-Meteor CRUD pattern.  It doesn't use form tags, and it doesn't auto-build a form using a JSON object.  It's intent is for the form builder who wants a high degree of granularity and control in builder his or her user interfaces.
 
 ------------------------
 ### Licensing
