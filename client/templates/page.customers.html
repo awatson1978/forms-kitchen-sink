@@ -1,143 +1,144 @@
 <template name="customersListTemplate" class="with-bottom-spacer">
-    <div id="customerSearchContainer">
-        <input id="customerSearchInput"type="text" placeholder="Filter..."></input>
-        <div class="spacer"></div>
-    </div>
-    <ul class="list-group">
-        {{#each customersList}}
-        {{> customersListItemTemplate }}
-        {{/each}}
-    </ul>
+  <div id="customerSearchContainer">
+    <input id="customerSearchInput" type="text" placeholder="Filter...">
+    <div class="spacer"></div>
+  </div>
+  <ul class="list-group">
+    {{#each customersList}}
+      {{> customersListItemTemplate }}
+    {{/each}}
+  </ul>
 </template>
 
 <template name="customersListItemTemplate">
-    <li class="list-group-item">{{FirstName}} {{LastName}}</li>
+  <li class="list-group-item">{{FirstName}} {{LastName}}</li>
 </template>
 
 
 
 <template name="customerFormTemplate">
-    {{#with user}}
+  {{#with user}}
     <div class="padded">
-        <div class="meteor-form">
-            <!-- don't add with-bottom-padding to the first column, so it displays on mobile correctly -->
-            <div class="col col-lg-6">
-                <input id="firstNameInput" type="text" placeholder="First Name" value="{{FirstName}}" {{first_name_enabled}}></input>
-                <label class="smallgray" for="firstNameInput">First Name</label>
+      <div class="meteor-form">
+        <!-- don't add with-bottom-padding to the first column, so it displays on mobile correctly -->
+        <div class="col col-lg-6">
+          <input id="firstNameInput" type="text" placeholder="First Name" value="{{FirstName}}" {{first_name_enabled}}>
+          <label class="smallgray" for="firstNameInput">First Name</label>
 
-                <input id="companyInput" type="text" placeholder="Company" value="{{Company}}"  {{company_enabled}}></input>
-                <label class="smallgray" for="companyInput">Company</label>
+          <input id="companyInput" type="text" placeholder="Company" value="{{Company}}" {{company_enabled}}>
+          <label class="smallgray" for="companyInput">Company</label>
 
-                <input id="addressInput" type="text" placeholder="Address" value="{{Address}}"  {{address_enabled}}></input>
-                <label class="smallgray" for="addressInput">Address</label>
+          <input id="addressInput" type="text" placeholder="Address" value="{{Address}}" {{address_enabled}}>
+          <label class="smallgray" for="addressInput">Address</label>
 
-                <input id="cityInput" type="text" placeholder="City" value="{{City}}"  {{city_enabled}}></input>
-                <label class="smallgray" for="cityInput">City</label>
+          <input id="cityInput" type="text" placeholder="City" value="{{City}}" {{city_enabled}}>
+          <label class="smallgray" for="cityInput">City</label>
 
-                <input id="phoneInput" type="tel" placeholder="Phone" value="{{Phone}}"  {{phone_enabled}}></input>
-                <label class="smallgray" for="phoneInput">Phone</label>
+          <input id="phoneInput" type="tel" placeholder="Phone" value="{{Phone}}" {{phone_enabled}}>
+          <label class="smallgray" for="phoneInput">Phone</label>
 
-                <input id="webInput" type="url" placeholder="Web" value="{{Web}}"  {{web_enabled}}></input>
-                <label class="smallgray" for="webInput">Website</label>
-            </div>
-            <div class="col col-lg-6 ">
-                <input id="lastNameInput" type="text" placeholder="Last Name" value="{{LastName}}"  {{last_name_enabled}}></input>
-                <label class="smallgray" for="lastNameInput">Last Name</label>
+          <input id="webInput" type="url" placeholder="Web" value="{{Web}}" {{web_enabled}}>
+          <label class="smallgray" for="webInput">Website</label>
+        </div>
+        <div class="col col-lg-6 ">
+          <input id="lastNameInput" type="text" placeholder="Last Name" value="{{LastName}}" {{last_name_enabled}}>
+          <label class="smallgray" for="lastNameInput">Last Name</label>
 
-                <input id="countyInput" type="text" placeholder="County" value="{{County}}"  {{county_enabled}}></input>
-                <label class="smallgray" for="countyInput">County</label>
+          <input id="countyInput" type="text" placeholder="County" value="{{County}}" {{county_enabled}}>
+          <label class="smallgray" for="countyInput">County</label>
 
-                <input id="stateInput" type="text" placeholder="State" value="{{State}}"  {{state_enabled}}></input>
-                <label class="smallgray" for="stateInput">State</label>
+          <input id="stateInput" type="text" placeholder="State" value="{{State}}" {{state_enabled}}>
+          <label class="smallgray" for="stateInput">State</label>
 
-                <input id="zipInput" type="text" placeholder="Zip" value="{{ZIP}}"  {{zip_enabled}}></input>
-                <label class="smallgray" for="zipInput">Zip</label>
+          <input id="zipInput" type="text" placeholder="Zip" value="{{ZIP}}" {{zip_enabled}}>
+          <label class="smallgray" for="zipInput">Zip</label>
 
-                <input id="faxInput" type="tel" placeholder="Fax" value="{{Fax}}"  {{fax_enabled}}></input>
-                <label class="smallgray" for="faxInput">Fax</label>
+          <input id="faxInput" type="tel" placeholder="Fax" value="{{Fax}}" {{fax_enabled}}>
+          <label class="smallgray" for="faxInput">Fax</label>
 
-                <input id="emailInput" type="email" placeholder="Email" value="{{Email}}"  {{email_enabled}}></input>
-                <label class="smallgray" for="emailInput">Email</label>
-            </div>
-            <div class="col col-lg-12 with-bottom-padding">
-                <textarea id="notesInput" rows="3" placeholder="Notes" value="Lorem ipsum..."  {{web_enabled}}></textarea>
-            </div>
-
-
-            <div class="col col-lg-6">
-                <input id="passwordInput" type="password" placeholder="password" value="{{Password}}" {{generic_enabled}}></input>
-                <div class="spacer"></div>
-
-                <input id="dateInput" type="datetime" placeholder="01/01/2013" value="{{Datetime}}" {{generic_enabled}}></input>
-                <div class="spacer"></div>
-
-                <input id="birthdateInput" type="date" placeholder="01/01/2013" value="{{Birthday}}" {{generic_enabled}}></input>
-                <div class="spacer"></div>
-
-                <input id="monthInput" type="month" placeholder="January" value="2012-01" {{generic_enabled}}></input>
-                <div class="spacer"></div>
-
-                <input id="weekInput" type="week" placeholder="Monday" value="{{Week}}" {{generic_enabled}}></input>
-                <div class="spacer"></div>
-
-                <input id="timeInput" type="time" placeholder="12:30 AM" value="{{Time}}" {{generic_enabled}}></input>
-                <div class="spacer"></div>
-            </div>
-            <div class="col col-lg-6 ">
-                <input id="numberInput" type="number" placeholder="123456" value="{{Number}}"  {{generic_enabled}}></input>
-                <div class="spacer"></div>
-
-                <input id="colorInput" type="color" placeholder="#33ff88" value="#{{Color}}" {{generic_enabled}}></input>
-                <div class="spacer"></div>
-            </div>
+          <input id="emailInput" type="email" placeholder="Email" value="{{Email}}" {{email_enabled}}>
+          <label class="smallgray" for="emailInput">Email</label>
+        </div>
+        <div class="col col-lg-12 with-bottom-padding">
+          <textarea id="notesInput" rows="3" placeholder="Notes" value="Lorem ipsum..." {{web_enabled}}></textarea>
+        </div>
 
 
+        <div class="col col-lg-6">
+          <input id="passwordInput" type="password" placeholder="password" value="{{Password}}" {{generic_enabled}}>
+          <div class="spacer"></div>
 
-            <!--<div class="radio container right with-bottom-padding">-->
-                <!--<label for="optionsRadiosEnabled">Enabled</label>-->
-                <!--<input type="radio" name="acountStatusRadios" id="optionsRadiosEnabled" value="enabled" checked>-->
-                <!--<label for="optionsRadiosDisabled">Disabled</label>-->
-                <!--<input type="radio" name="acountStatusRadios" id="optionsRadiosDisabled" value="disabled">-->
-            <!--</div>-->
+          <input id="dateInput" type="datetime" placeholder="01/01/2013" value="{{Datetime}}" {{generic_enabled}}>
+          <div class="spacer"></div>
 
-            <!--<br>-->
-            <!--<br>-->
+          <input id="birthdateInput" type="date" placeholder="01/01/2013" value="{{Birthday}}" {{generic_enabled}}>
+          <div class="spacer"></div>
 
-            <!--<div class="checkboxes">-->
-                <!--<label for="adminCheckbox">admin</label>-->
-                <!--<label for="moderatorCheckbox">moderator</label>-->
-                <!--<label for="userCheckbox">user</label>-->
-                <!--<label for="guestCheckbox">guest</label>-->
+          <input id="monthInput" type="month" placeholder="January" value="2012-01" {{generic_enabled}}>
+          <div class="spacer"></div>
 
-                <!--<input id="adminCheckbox" type="checkbox" value="Admin">-->
-                <!--<input id="moderatorCheckbox" type="checkbox" value="">-->
-                <!--<input id="userCheckbox" type="checkbox" value="">-->
-                <!--<input id="guestCheckbox" type="checkbox" value="" checked>-->
-            <!--</div>-->
+          <input id="weekInput" type="week" placeholder="Monday" value="{{Week}}" {{generic_enabled}}>
+          <div class="spacer"></div>
 
-            {{#if isNewTask}}
-            <div class="padded col col-lg-12">
-                <button id="newUserButton" type="button" class="fullwidth btn btn-info" width="100%">Create New User!</button>
-            </div>
-            {{/if}}
+          <input id="timeInput" type="time" placeholder="12:30 AM" value="{{Time}}" {{generic_enabled}}>
+          <div class="spacer"></div>
+        </div>
+        <div class="col col-lg-6 ">
+          <input id="numberInput" type="number" placeholder="123456" value="{{Number}}" {{generic_enabled}}>
+          <div class="spacer"></div>
 
-            {{#if isDeletingTask}}
-            <div class="padded col col-lg-12 with-bottom-padding">
-                <div class="alert alert-danger">
-                    <h4 class="centered">Are you sure you want to delete this user?</h4>
-                    <div class="container">
-                        <div class="col col-lg-6">
-                            <button id="deleteUserButton" type="button" class="fullwidth btn btn-danger">Delete</button>
-                        </div>
-                        <div class="col col-lg-6">
-                            <button id="cancelDeleteButton" type="button" class="fullwidth btn btn-danger">Cancel</button>
-                        </div>
+          <input id="colorInput" type="color" placeholder="#33ff88" value="#{{Color}}" {{generic_enabled}}>
+          <div class="spacer"></div>
+        </div>
 
-                    </div>
+
+
+        <!--<div class="radio container right with-bottom-padding">-->
+        <!--<label for="optionsRadiosEnabled">Enabled</label>-->
+        <!--<input type="radio" name="acountStatusRadios" id="optionsRadiosEnabled" value="enabled" checked>-->
+        <!--<label for="optionsRadiosDisabled">Disabled</label>-->
+        <!--<input type="radio" name="acountStatusRadios" id="optionsRadiosDisabled" value="disabled">-->
+        <!--</div>-->
+
+        <!--<br>-->
+        <!--<br>-->
+
+        <!--<div class="checkboxes">-->
+        <!--<label for="adminCheckbox">admin</label>-->
+        <!--<label for="moderatorCheckbox">moderator</label>-->
+        <!--<label for="userCheckbox">user</label>-->
+        <!--<label for="guestCheckbox">guest</label>-->
+
+        <!--<input id="adminCheckbox" type="checkbox" value="Admin">-->
+        <!--<input id="moderatorCheckbox" type="checkbox" value="">-->
+        <!--<input id="userCheckbox" type="checkbox" value="">-->
+        <!--<input id="guestCheckbox" type="checkbox" value="" checked>-->
+        <!--</div>-->
+
+        {{#if isNewTask}}
+        <div class="padded col col-lg-12">
+          <button id="newUserButton" type="button" class="fullwidth btn btn-info" width="100%">Create New User!</button>
+        </div>
+        {{/if}}
+
+        {#if isDeletingTask}}
+          <div class="padded col col-lg-12 with-bottom-padding">
+            <div class="alert alert-danger">
+              <h4 class="centered">Are you sure you want to delete this user?</h4>
+
+              <div class="container">
+                <div class="col col-lg-6">
+                  <button id="deleteUserButton" type="button" class="fullwidth btn btn-danger">Delete</button>
                 </div>
+                <div class="col col-lg-6">
+                  <button id="cancelDeleteButton" type="button" class="fullwidth btn btn-danger">Cancel</button>
+                </div>
+              </div>
+
             </div>
-            {{/if}}
-        </form>
+          </div>
+        {{/if}}
+      </div>
     </div>
-    {{/with}}
+  {{/with}}
 </template>
