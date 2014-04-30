@@ -4,6 +4,8 @@
     "dataset-customers": {
       "git": "https://github.com/awatson1978/dataset-customers.git"
     },
-    "moment": {}
+    "moment": {},
+    "bootstrap-3": {},
+    "session-extended-api": {}
   }
 }

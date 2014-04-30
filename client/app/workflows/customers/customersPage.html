@@ -1,0 +1,12 @@
+<template name="customersPage">
+    <div id="customersPage" class="fullheight padded">
+        <div class="container doesnt-overlap-header">
+            <div id="sidebarPanel" class="col col-lg-3 panel with-rounded-corners">
+                {{> customersListTemplate }}
+            </div>
+            <div id="formPanel" class="col col-lg-9 unpadded">
+                {{> customerFormTemplate }}
+            </div>
+        </div>
+    </div>
+</template>

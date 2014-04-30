@@ -1,0 +1,15 @@
+<template name="customersListTemplate" class="with-bottom-spacer">
+  <div id="customerSearchContainer">
+    <input id="customerSearchInput" type="text" class="fullwidth form-control" placeholder="Filter...">
+    <div class="spacer"></div>
+  </div>
+  <ul class="list-group">
+    {{#each customersList}}
+      {{> customersListItemTemplate }}
+    {{/each}}
+  </ul>
+</template>
+
+<template name="customersListItemTemplate">
+  <li class="list-group-item">{{FirstName}} {{LastName}}</li>
+</template>

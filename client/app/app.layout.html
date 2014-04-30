@@ -1,0 +1,18 @@
+<head>
+  <title>Clinical Forms</title>
+</head>
+
+<body>
+  {{> appContainerTemplate}}
+</body>
+
+<template name="appContainerTemplate">
+    {{> navbarHeader }}
+
+    <div id="appLayoutPanel" class="fullheight padded">
+        {{> customersPage }}
+
+    </div>
+    {{> navbarFooter }}
+    <div class="hidden resize-trigger">resized: {{resized}}</div>
+</template>
