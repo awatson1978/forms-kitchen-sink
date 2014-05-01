@@ -1,10 +1,10 @@
-**NOTE:  Please note that this repository is deprecated, and has been replaced by [clinical-ui-forms](http://clinical-ui-forms.meteor.com/)**  
+**NOTE:  Please note that this repository is deprecated, and has been replaced by [clinical-ui-forms](http://github.com/awatson1978/clinical-ui-forms.git)**  
 
 
 ------------------------
 ### Installation
 
-````js
+````md
 git clone https://github.com/awatson1978/forms-kitchen-sink.git
 cd forms-kitchen-sink
 sudo mrt
