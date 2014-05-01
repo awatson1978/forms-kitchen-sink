@@ -4,15 +4,12 @@
 # but you can also edit it by hand.
 
 
-preserve-inputs
 less
-router
 jquery
 moment
 random
 standard-app-packages
+ui
 
-page-js-ie-support
-HTML5-History-API
 bootstrap-3
 session-extended-api

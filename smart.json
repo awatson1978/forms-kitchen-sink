@@ -1,6 +1,5 @@
 {
   "packages": {
-    "router": {},
     "dataset-customers": {
       "git": "https://github.com/awatson1978/dataset-customers.git"
     },
